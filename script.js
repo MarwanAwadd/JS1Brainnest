@@ -80,6 +80,20 @@ function game(roundNum) {
         alert(result);
     }
     alert("Game results: User = " + userWinCount + ", VS Computer = " + compWinCount + ", Draws = " + drawCount);
+    setTimeout(() => {
+        if((drawCount > userWinCount && drawCount > compWinCount) || userWinCount == compWinCount){
+            alert("Its a Draw! " + userWinCount + " : " + compWinCount);
+        }
+        else{
+            if(compWinCount > userWinCount){
+                alert("You Lose! " + userWinCount + " : " + compWinCount);
+            }
+            else{
+                alert("You Win! " + userWinCount + " : " + compWinCount);
+            }
+        }
+        
+    }, 2000);
 }
 
 game(5)
