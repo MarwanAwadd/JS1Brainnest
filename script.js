@@ -53,41 +53,31 @@ function round(playerSelection, computerSelection){
 }
 
 function game(roundNum) {
-    console.log()
-    if(isNaN(roundNum)){
-        alert("You did not enter a number, please try again.");
-        let roundNum = prompt("Please enter number of rounds:", "6")
-        game(roundNum);
-        return;
-    }
-    else{
-        let userWinCount = 0;
-        let compWinCount = 0;
-        let drawCount = 0;
-        for (let i = 0; i < parseInt(roundNum); i++) {
-            let comp = computerPlay();
-            let player = prompt("Please enter your rock, paper or scissors:");
-            let result = round(player, comp);
-            if(result.includes("You Win")){
-                userWinCount = userWinCount + 1;
-            }
-            else if(result.includes("You Lose")){
-                compWinCount = compWinCount + 1;
-            }
-            else if(result.includes("Draw")){
-                drawCount = drawCount + 1;
-            }
-            while(result === "Invalid entry, try again!"){
-                comp = computerPlay();
-                player = prompt("Please enter your rock, paper or scissors:");
-                result = round(player, comp);
-                alert(result);
-            }
+    let userWinCount = 0;
+    let compWinCount = 0;
+    let drawCount = 0;
+    for (let i = 0; i < roundNum; i++) {
+        let comp = computerPlay();
+        let player = prompt("Please enter your rock, paper or scissors:");
+        let result = round(player, comp);
+        if(result.includes("You Win")){
+            userWinCount = userWinCount + 1;
+        }
+        else if(result.includes("You Lose")){
+            compWinCount = compWinCount + 1;
+        }
+        else if(result.includes("Draw")){
+            drawCount = drawCount + 1;
+        }
+        while(result === "Invalid entry, try again!"){
+            comp = computerPlay();
+            player = prompt("Please enter your rock, paper or scissors:");
+            result = round(player, comp);
             alert(result);
         }
-        alert("Game results: User = " + userWinCount + ", VS Computer = " + compWinCount + ", Draws = " + drawCount);
+        alert(result);
     }
+    alert("Game results: User = " + userWinCount + ", VS Computer = " + compWinCount + ", Draws = " + drawCount);
 }
 
-const roundNum = prompt("Please enter number of rounds:", "6")
-game(roundNum)
+game(5)
