@@ -57,7 +57,8 @@ function game(roundNum) {
     if(isNaN(roundNum)){
         alert("You did not enter a number, please try again.");
         let roundNum = prompt("Please enter number of rounds:", "6")
-        game(roundNum)
+        game(roundNum);
+        return;
     }
     else{
         let userWinCount = 0;
