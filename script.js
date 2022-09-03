@@ -75,7 +75,9 @@ function game(roundNum) {
             player = prompt("Please enter your rock, paper or scissors:");
             result = round(player, comp);
             console.log(result);
-            alert(result);
+            if(result === "Invalid entry, try again!"){
+                alert(result);
+            }
         }
         alert(result);
     }
