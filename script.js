@@ -60,6 +60,7 @@ function game(roundNum) {
         let comp = computerPlay();
         let player = prompt("Please enter your rock, paper or scissors:");
         let result = round(player, comp);
+        console.log(result);
         if(result.includes("You Win")){
             userWinCount = userWinCount + 1;
         }
@@ -73,6 +74,7 @@ function game(roundNum) {
             comp = computerPlay();
             player = prompt("Please enter your rock, paper or scissors:");
             result = round(player, comp);
+            console.log(result);
             alert(result);
         }
         alert(result);
